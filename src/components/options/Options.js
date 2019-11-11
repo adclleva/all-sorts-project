@@ -6,7 +6,7 @@ class Options extends React.Component {
     render() {
         return (
             <div>
-                <h1>Option go here</h1>
+                <h1>Options go here</h1>
             </div>
         )
     }

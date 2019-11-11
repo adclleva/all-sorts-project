@@ -1,0 +1,22 @@
+/* https://www.youtube.com/watch?v=bClP73LpeOY */
+/* this video helped me figure out how to create the vertical bars horizontally */
+.array-num-bar {
+    width: 10px;
+    background-color: #2e77ac; 
+
+}
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation 
+   for changing the orientation of the numbers */
+.numbers-display {
+    writing-mode: vertical-rl;
+   text-orientation: upright; 
+}
+
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
+    a good guide on flexbox*/
+.sorting-container{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}

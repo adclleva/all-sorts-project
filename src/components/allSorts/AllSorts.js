@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './AllSorts.css'
 class AllSorts extends React.Component {
     constructor() {
         super()
@@ -14,9 +14,9 @@ class AllSorts extends React.Component {
 
     generateArr = () => {
         let newArr = []
-        let arrSize = 100
-        let barMin = 1
-        let barMax = 100
+        let arrSize = 75
+        let barMin = 10
+        let barMax = 1000
         
         for (let i = 0; i < arrSize; i++) {
             let randomNum = Math.floor(Math.random() * (barMax - barMin) + barMin) 
@@ -30,14 +30,29 @@ class AllSorts extends React.Component {
 
 
         return (
-            <div>
-            {array.map((num, index) => {
+            <div className="sorting-container">
+                {array.map((num, index) => {
+                    return (
+                        <div>
+                                                       
+                        <div
+                            className="numbers-display"
+                        >{num}</div>
+                        <br/>
+                        <div 
+                            className="array-num-bar"
+                            key={index}
 
-                return (
-                <div key={index}>{num}</div>
-                )
-            })}
+                            // we have to use inline styling to get the height of the bar
+                            // also learned that style attributes accept JS object with camelCase properties
+                            // https://reactjs.org/docs/dom-elements.html#style
+                            style={{height: `${num}px`}}
+                            ></div>
  
+                        </div>
+                        
+                    )
+                })}
             </div>
        )
     } 
