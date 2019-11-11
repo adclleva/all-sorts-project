@@ -14,7 +14,7 @@ class AllSorts extends React.Component {
 
     generateArr = () => {
         let newArr = []
-        let arrSize = 75
+        let arrSize = 310
         let barMin = 10
         let barMax = 1000
         
@@ -35,10 +35,10 @@ class AllSorts extends React.Component {
                     return (
                         <div>
                                                        
-                        <div
+                        {/* <div
                             className="numbers-display"
                         >{num}</div>
-                        <br/>
+                        <br/> */}
                         <div 
                             className="array-num-bar"
                             key={index}

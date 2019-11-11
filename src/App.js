@@ -6,7 +6,7 @@ import Options from './components/options/Options.js'
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div clasName="main-components">
         <h1>Welcome to allSorts!</h1> 
         <AllSorts />
         <Options />
