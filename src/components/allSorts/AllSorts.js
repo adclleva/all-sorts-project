@@ -15,7 +15,7 @@ class AllSorts extends React.Component {
     generateArr = () => {
         let newArr = []
         // this dynamicall adjusts the size of the array based on the screen width
-        let arrSize = window.innerWidth/ 18
+        let arrSize = window.innerWidth/ 12
         // this checks the screen height, width and number of bars
         // console.log(window.innerWidth, window.innerHeight, arrSize)
 
@@ -23,7 +23,7 @@ class AllSorts extends React.Component {
         let barMin = 10
 
         // this dynamicall adjusts the size of the array based on the screen hieght
-        let barMax = window.innerHeight - 250
+        let barMax = window.innerHeight - 225
         
         for (let i = 0; i < arrSize; i++) {
             let randomNum = Math.floor(Math.random() * (barMax - barMin) + barMin) 
