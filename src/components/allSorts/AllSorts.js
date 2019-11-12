@@ -55,18 +55,18 @@ class AllSorts extends React.Component {
 
         return (
             <div>
-                <div className="sorting-container" key={this.getUniqueKey() + 10}>
+                <div className="sorting-container" >
                     {array.map((num, index) => {
                         return (
+                            /* Solved this error Warning: Each child in a list should have a unique "key" prop. */
                             <div key={this.getUniqueKey()}>                        
                                 <div
                                     className="numbers-display"
-                                    key={this.getUniqueKey() + index}
+                                    
                                 >{num}</div>
                                 <br/>
                                 <div 
                                     className="array-num-bar"
-                                    key={this.getUniqueKey() + num}
                                     // we have to use inline styling to get the height of the bar
                                     // also learned that style attributes accept JS object with camelCase properties
                                     // https://reactjs.org/docs/dom-elements.html#style
@@ -77,7 +77,7 @@ class AllSorts extends React.Component {
                     })}
                 </div>
 
-                <div className="menu-container" key={this.getUniqueKey() + 1}>
+                <div className="menu-container" >
                     <h3 onClick={this.shuffle}>Shuffle</h3>
                     <h3 onClick={this.bubbleSort}>Bubble Sort</h3>
 
