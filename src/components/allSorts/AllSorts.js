@@ -15,10 +15,13 @@ class AllSorts extends React.Component {
         this.generateArr()
     }
 
+    
+
     generateArr = () => {
         let newArr = []
         // this dynamicall adjusts the size of the array based on the screen width
-        let arrSize = window.innerWidth/ 12
+        let arrSize = window.innerWidth/ 12 // 12 is the number that looks best
+
         // this checks the screen height, width and number of bars
         // console.log(window.innerWidth, window.innerHeight, arrSize)
 
@@ -26,7 +29,7 @@ class AllSorts extends React.Component {
         let barMin = 10
 
         // this dynamicall adjusts the size of the array based on the screen hieght
-        let barMax = window.innerHeight - 225
+        let barMax = window.innerHeight - 225 // 225 is what helped fits everything
         
         for (let i = 0; i < arrSize; i++) {
             let randomNum = Math.floor(Math.random() * (barMax - barMin) + barMin) 
@@ -45,8 +48,16 @@ class AllSorts extends React.Component {
        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
     }
 
-    bubbleSort = (array) => {
-        bubbleSort()
+    bubbleSort = (inputArr) => {
+        const { array } = this.state
+
+        let newArr =  bubbleSort(array)
+
+        this.setState({array: newArr})
+    }
+
+    testSortWords = () => {
+
     }
 
     render() {
