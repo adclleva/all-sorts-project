@@ -1,8 +1,9 @@
 /* https://www.youtube.com/watch?v=bClP73LpeOY */
 /* this video helped me figure out how to create the vertical bars horizontally */
 .array-num-bar {
-    width: 10px;
+    width: 17px;
     background-color: #2e77ac; 
+    flex-grow: 100;
 
 }
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation 
@@ -18,5 +19,6 @@
     display:flex;
     justify-content: center;
     align-items: flex-end;
+    align-content: stretch;
 
 }

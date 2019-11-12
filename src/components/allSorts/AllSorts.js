@@ -14,9 +14,16 @@ class AllSorts extends React.Component {
 
     generateArr = () => {
         let newArr = []
-        let arrSize = 75
+        // this dynamicall adjusts the size of the array based on the screen width
+        let arrSize = window.innerWidth/ 18
+        // this checks the screen height, width and number of bars
+        // console.log(window.innerWidth, window.innerHeight, arrSize)
+
+        
         let barMin = 10
-        let barMax = 1000
+
+        // this dynamicall adjusts the size of the array based on the screen hieght
+        let barMax = window.innerHeight - 250
         
         for (let i = 0; i < arrSize; i++) {
             let randomNum = Math.floor(Math.random() * (barMax - barMin) + barMin) 
@@ -33,22 +40,21 @@ class AllSorts extends React.Component {
             <div className="sorting-container">
                 {array.map((num, index) => {
                     return (
-                        <div>
-                                                       
-                        <div
-                            className="numbers-display"
-                        >{num}</div>
-                        <br/>
-                        <div 
-                            className="array-num-bar"
-                            key={index}
+                        <div>                        
+                            <div
+                                className="numbers-display"
+                                key={num + index}
+                            >{num}</div>
+                            <br/>
+                            <div 
+                                className="array-num-bar"
+                                key={index}
 
-                            // we have to use inline styling to get the height of the bar
-                            // also learned that style attributes accept JS object with camelCase properties
-                            // https://reactjs.org/docs/dom-elements.html#style
-                            style={{height: `${num}px`}}
-                            ></div>
- 
+                                // we have to use inline styling to get the height of the bar
+                                // also learned that style attributes accept JS object with camelCase properties
+                                // https://reactjs.org/docs/dom-elements.html#style
+                                style={{height: `${num}px`}}
+                                ></div>
                         </div>
                         
                     )
