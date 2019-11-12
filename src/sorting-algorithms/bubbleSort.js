@@ -3,8 +3,20 @@ export const bubbleSort = (array) => {
 
     while(isSorted === false) {
         isSorted = true
-        
+
+        for (let i = 0; i < array.length - 1; i++) {
+            let curNum = array[i];
+            let nextNum = array[i + 1];
+
+            if (curNum > nextNum) {
+                array[i + i] = curNum
+                array[i] = nextNum
+                isSorted = false
+            }
+        }
     }
+
+    return array
 }
 
 let arr = []
@@ -14,4 +26,4 @@ for (let i = 0; i < 100; i++) {
     arr.push(randomNum)
 }
 
-console.log(bubbleSort(arr) == arr.sort((a,b) => a-b))
+console.log(bubbleSort(arr) === arr.sort((a,b) => a-b))

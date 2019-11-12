@@ -52,7 +52,7 @@ class AllSorts extends React.Component {
         const { array } = this.state
 
         let newArr =  bubbleSort(array)
-
+        
         this.setState({array: newArr})
     }
 
