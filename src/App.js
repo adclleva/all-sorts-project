@@ -9,7 +9,6 @@ class App extends React.Component {
       <div>
         <h1>Welcome to allSorts!</h1> 
         <AllSorts />
-        <Options />
       </div>
     )
   }
