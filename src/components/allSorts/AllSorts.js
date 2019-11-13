@@ -48,17 +48,21 @@ class AllSorts extends React.Component {
        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
     }
 
-    bubbleSort = (inputArr) => {
+    bubbleSort = () => {
         const { array } = this.state
 
         let newArr =  bubbleSort(array)
+
+        // console.log(newArr === array.sort((a,b) => a-b)) to test that it's working
         
         this.setState({array: newArr})
     }
 
-    testSortWords = () => {
-
+    testSortMethods = () => {
+      
     }
+
+
 
     render() {
         const { array } = this.state

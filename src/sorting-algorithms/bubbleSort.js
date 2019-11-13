@@ -1,4 +1,4 @@
-export const bubbleSort = (array) => {
+export function bubbleSort(array) {
     let isSorted = false
 
     while(isSorted === false) {
@@ -9,13 +9,12 @@ export const bubbleSort = (array) => {
             let nextNum = array[i + 1];
 
             if (curNum > nextNum) {
-                array[i + i] = curNum
+                array[i + 1] = curNum
                 array[i] = nextNum
                 isSorted = false
             }
         }
     }
-
     return array
 }
 
