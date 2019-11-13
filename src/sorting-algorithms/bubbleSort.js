@@ -15,7 +15,7 @@ export function bubbleSort(array) {
 
             if (curNum > nextNum) {
 
-                animations.push([i, true])
+                animations.push([i, true, curNum])
                 array[i + 1] = curNum
                 array[i] = nextNum
                 isSorted = false
@@ -27,12 +27,12 @@ export function bubbleSort(array) {
 
 //code below is to check if the sorting algorithm works 
 
-let arr = []
+// let arr = []
 
-for (let i = 0; i < 10; i++) {
-    let randomNum = Math.floor(Math.random() * (100 - 10) + 10) 
-    arr.push(randomNum)
-}
+// for (let i = 0; i < 10; i++) {
+//     let randomNum = Math.floor(Math.random() * (100 - 10) + 10) 
+//     arr.push(randomNum)
+// }
 
-console.log(bubbleSort(arr) === arr.sort((a,b) => a-b))
-console.log(bubbleSort(arr))
+// console.log(bubbleSort(arr) === arr.sort((a,b) => a-b))
+// console.log(bubbleSort(arr))

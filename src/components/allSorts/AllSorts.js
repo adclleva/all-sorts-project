@@ -59,14 +59,17 @@ class AllSorts extends React.Component {
             
             const currentBarIndex = animations[i][0]
             console.log("currentBarIndex", currentBarIndex)
+            console.log("switch", animations[i][1])
             
             const currentBarStyle = arrayBars[currentBarIndex].style
             
-            const currentColor = currentBarIndex === 0 ?  "#2e77ac" : "#984447"
+            const currentColor = animations[i][1] ?  "#2e77ac" : "#984447"
 
             setTimeout(() => {
                 currentBarStyle.backgroundColor = currentColor
-                // currentBarStyle.height = `${i}px`
+                if (animations[i][1]) {
+                    currentBarStyle.height = `${animations[i][2]}px`
+                }
                 
             },i * 100)
       
