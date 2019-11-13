@@ -6,9 +6,11 @@ export function bubbleSort(array) {
     while(isSorted === false) {
         isSorted = true
 
-        for (let i = 0; i < array.length - 1; i++) {
+        for (let i = 0; i < array.length; i++) {
             
             animations.push([i])
+            animations.push([i])
+
             let curNum = array[i];
             let nextNum = array[i + 1];
 
