@@ -51,20 +51,24 @@ class AllSorts extends React.Component {
     bubbleSortAnimation = () => {
         const { array } = this.state
         const animations =  bubbleSort(array) 
+        
+        // console.log(animations) to check the animations array
 
         for (let i= 0; i < animations.length - 1; i++) {
             const arrayBars = document.getElementsByClassName('array-num-bar')
-            const currentBarIndex = animations[i]
-            const nextBarIndex = animations[i + 1]
+            
+            const currentBarIndex = animations[i][0]
+            console.log("currentBarIndex", currentBarIndex)
+            
             const currentBarStyle = arrayBars[currentBarIndex].style
-            const nextBarStyle = arrayBars[nextBarIndex].style
-            const currentColor = i % 2 === 0 ?  "green" : "purple"
-            const nextColor = i % 2 === 0 ?  "black" : "yellow"
+            
+            const currentColor = currentBarIndex === 0 ?  "#2e77ac" : "#984447"
+
             setTimeout(() => {
                 currentBarStyle.backgroundColor = currentColor
-                currentBarStyle.height = `${i}px`
+                // currentBarStyle.height = `${i}px`
                 
-            },i * 10)
+            },i * 100)
       
         }
         
