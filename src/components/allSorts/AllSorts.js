@@ -20,13 +20,13 @@ class AllSorts extends React.Component {
     generateArr = () => {
         let newArr = []
         // this dynamicall adjusts the size of the array based on the screen width
-        let arrSize = window.innerWidth/ 12 // 12 is the number that looks best
+        const arrSize = window.innerWidth/ 12 // 12 is the number that looks best
 
         // this checks the screen height, width and number of bars
         // console.log(window.innerWidth, window.innerHeight, arrSize)
 
         
-        let barMin = 10
+        const barMin = 10 
 
         // this dynamicall adjusts the size of the array based on the screen hieght
         let barMax = window.innerHeight - 225 // 225 is what helped fits everything
@@ -48,14 +48,24 @@ class AllSorts extends React.Component {
        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
     }
 
-    bubbleSort = () => {
+    bubbleSortAnimation = () => {
         const { array } = this.state
+        const animations =  bubbleSort(array) 
 
-        let newArr =  bubbleSort(array)
+        for (let i= 0; i < animations.length; i++) {
+            const arrayBars = document.getElementsByClassName('array-num-bar')
+            const currentBarIndex = animations[i]
+            const currentBarStyle = arrayBars[currentBarIndex].style
+
+            setTimeout(() => {
+                currentBarStyle.backgroundColor = '#00A7E1'
+            },i * 100)
+        }
+        
 
         // console.log(newArr === array.sort((a,b) => a-b)) to test that it's working
         
-        this.setState({array: newArr})
+        // this.setState({array: newArr})
     }
 
     testSortMethods = () => {
@@ -94,7 +104,7 @@ class AllSorts extends React.Component {
 
                 <div className="menu-container" >
                     <h3 onClick={this.shuffle}>Shuffle</h3>
-                    <h3 onClick={this.bubbleSort}>Bubble Sort</h3>
+                    <h3 onClick={this.bubbleSortAnimation}>Bubble Sort</h3>
 
                 </div>
             </div>

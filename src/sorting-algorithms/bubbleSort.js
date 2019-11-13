@@ -1,10 +1,14 @@
 export function bubbleSort(array) {
+    const animations = []
+    
     let isSorted = false
 
     while(isSorted === false) {
         isSorted = true
 
         for (let i = 0; i < array.length - 1; i++) {
+            
+            animations.push([i])
             let curNum = array[i];
             let nextNum = array[i + 1];
 
@@ -15,14 +19,17 @@ export function bubbleSort(array) {
             }
         }
     }
-    return array
+    return animations
 }
 
-let arr = []
+//code below is to check if the sorting algorithm works 
 
-for (let i = 0; i < 100; i++) {
-    let randomNum = Math.floor(Math.random() * (100 - 10) + 10) 
-    arr.push(randomNum)
-}
+// let arr = []
 
-console.log(bubbleSort(arr) === arr.sort((a,b) => a-b))
+// for (let i = 0; i < 100; i++) {
+//     let randomNum = Math.floor(Math.random() * (100 - 10) + 10) 
+//     arr.push(randomNum)
+// }
+
+// console.log(bubbleSort(arr) === arr.sort((a,b) => a-b))
+// console.log(bubbleSort(arr))
